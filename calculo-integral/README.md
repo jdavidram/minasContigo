@@ -2,7 +2,7 @@
 
 **Capitulo 1**
 
-1. Notación Sigma
+1. [Notación Sigma](#notación-sigma)
 2. El problema del área
 3. El problema de la distancia
 4. La integral definida
@@ -65,3 +65,31 @@
     13.1. Series importantes de Maclaurin y sus radios de convergencia
     13.2. Multiplicación y división de series de potencias
     13.3. Aproximación de funciones por polinomios
+
+<hr />
+
+### Capitulo 1
+
+## Notación Sigma
+
+El **operador sumatoria** nos permite escribir la suma de varios numeros $a_m ,..., a_n (m \leq n)$ en la forma compacta
+
+$$
+\sum^n_{i=m}a_i = a_m + a_{m+1} + ... + a_{n-1} + a_n
+$$
+
+Por definición:
+
+* Indica terminar en i = n
+
+* La letra $\sum$ significa suma
+
+* Indica iniciar en i = m
+
+> **Propiedades**
+>
+> Siendo *c* una constante
+>
+> * $\sum_{i=1}^n c = n*c$
+> * $\sum_{i=1}^n c*a_i = c\sum_{i=1}^n a_i$
+> * $\sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i$
