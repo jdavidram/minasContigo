@@ -13,7 +13,7 @@
 9. [**Teorema Fundamental del Calculo** - Cómo evaluar integrales definidas](#teorema-fundamental-del-calculo---cómo-evaluar-integrales-definidas)
 10. **Teorema Fundamental del Calculo** - Cómo construir antiderivadas
 11. [La derivación y la integración como procesos inversos](#la-derivación-y-la-integración-como-procesos-inversos)
-12. Aplicaciones del teorema de evaluación
+12. [Aplicaciones del teorema de evaluación](#aplicaciones-del-teorema-de-evaluación)
 13. La Regla de Sustitución
 14. Técnica de integración por partes
 15. Integrales trigonométricas
@@ -188,4 +188,44 @@ $$
 $$
 $$
 \frac{d}{dx}\int_{a}^{x}{f(t)}dt = f(x)
+$$
+
+## Aplicaciones del teorema de evaluación
+
+> **Teorema del cambio neto**
+>
+> La integral de una razón de cambio es el cambio neto (o total)
+> $$
+> \int_{a}^{b}{Q'(x)}dx = Q(b) - Q(a)
+> $$
+
+* Si $V(t)$ es el volumen de agua en un tanque $V'(t)$
+ es la razón a la cual fluye (entra o sale) el agua en el instante $t$. Por tanto la variación del volumen entre el tiempo $t_1$ y $t_2$ es:
+
+$$
+\int_{t_1}^{t_2}{V'(t)}dt = V(t_2) - V(t_1)
+$$
+
+* Si $m(x)$ es la masa de una varilla, medida del extremo izquierdo hasta un punto $x$, la *densidad lineal* es $\rho(x) = m'(x)$. Por lo que la masa de la varilla desde un extremo $a$ a $b$ es:
+
+$$
+\int_{a}^{b}{\rho(x)}dx = m(b) - m(a)
+$$
+
+* Si $C(x)$ es el costo de producir $x$ unidades de un artículo, el *costo marginal* es la derivada $C'(x)$. De esa manera el incremento cuando la producción aumenta de $x_1$ a $x_2$ unidades es:
+
+$$
+\int_{x_1}^{x_2}{C'(x)}dx = C(x_2) - C(x_1)
+$$
+
+* Si un objeto se mueve a lo largo de una línea recta con función posición $s(t)$, su velocidad es $v(t) = s'(t)$. De modo que el *desplazamiento* de la particula desde $t_1$ hasta $t_2$ es:
+
+$$
+\int_{t_1}^{t_2}{v(t)}dt = s(t_2) - s(t_1)
+$$
+
+* Pero, si queremos calcular la *distancia recorrida durante el intervalo*, tenemos que integrar la rapidez.
+
+$$
+\int_{t_1}^{t_2}{|v(t)|}dt = DistanciaTotal
 $$
