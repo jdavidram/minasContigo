@@ -10,9 +10,9 @@
 6. [Antiderivadas](#antiderivadas)
 7. [Integral indefinida](#integral-indefinida)
 8. Movimiento rectilíneo
-9. **Teorema Fundamental del Calculo** - Cómo evaluar integrales definidas
+9. [**Teorema Fundamental del Calculo** - Cómo evaluar integrales definidas](#teorema-fundamental-del-calculo---cómo-evaluar-integrales-definidas)
 10. **Teorema Fundamental del Calculo** - Cómo construir antiderivadas
-11. La derivación y la integración como procesos inversos
+11. [La derivación y la integración como procesos inversos](#la-derivación-y-la-integración-como-procesos-inversos)
 12. Aplicaciones del teorema de evaluación
 13. La Regla de Sustitución
 14. Técnica de integración por partes
@@ -164,3 +164,28 @@ Observemos que una integral definida es un n«umero y que una integral indefinid
 * $\int{\frac{1}{\sqrt{1-x²}}}dx = sin^{-1}(x) + C$
 * $\int{\frac{-1}{\sqrt{1-x²}}}dx = cos^{-1}(x) + C$
 * $\int{\frac{1}{1-x²}}dx = tan^{-1}(x) + C$
+
+## Teorema Fundamental del Calculo - Cómo evaluar integrales definidas
+
+El Teorema Fundamental del Cálculo recibe de manera apropiada este nombre porque establece una conexión entre las 2 ramas del cálculo: el cálculo
+diferencial y el cálculo integral. Usando la relación inversa entre la integral y la derivada que afirma el teorema, Newton y Leibniz desarrollaron un
+método sistemático que nos permite calcular con gran facilidad áreas, distancias e integrales definidas, sin tener que evaluarlas como límites de sumas.
+
+> **Teorema de evaluación**
+>
+> Sean $f$ una función continua en [a,b] y $F(x)$ una antiderivada de $f(x)$ en [a,b]. Entonces:
+> $$
+> \int_{a}^{b}{f(x)}dx = F(x)|_{a}^{b} = F(b) - F(a)
+> $$
+
+## La derivación y la integración como procesos inversos
+
+$$
+\int_{a}^{x}{f(t)}dt = F(x) - F(a)
+$$
+$$
+\frac{d}{dx}(F(x) - F(a)) = f(x)
+$$
+$$
+\frac{d}{dx}\int_{a}^{x}{f(t)}dt = f(x)
+$$
