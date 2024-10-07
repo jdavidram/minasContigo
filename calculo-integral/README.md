@@ -8,7 +8,7 @@
 4. La integral definida
 5. Propiedades de la integral definida
 6. [Antiderivadas](#antiderivadas)
-7. Integral indefinida
+7. [Integral indefinida](#integral-indefinida)
 8. Movimiento rectilíneo
 9. **Teorema Fundamental del Calculo** - Cómo evaluar integrales definidas
 10. **Teorema Fundamental del Calculo** - Cómo construir antiderivadas
@@ -131,3 +131,36 @@ es una antiderivada de $f(x) = x^3$ en $I$.
 > Donde $C \in \mathbb{R}$ es una constante arbitraria
 
 Necesitamos una notación adecuada para las antiderivadas que nos facilite el trabajo con ellas.
+
+## Integral Indefinida
+ 
+$$
+\int{f(x)}dx = F(x) + C => F'(x) = f(x)
+$$
+ 
+Observemos que una integral definida es un n«umero y que una integral indefinida es una familia de funciones.
+ 
+> **Propiedades de la integral indefinida**
+>
+> Donde $k \in \mathbb{R}$
+>
+> * $\int{k*f(x)}dx = k*\int{f(x)}dx$
+>
+> * $\int{f(x) \pm g(x)}dx = \int{f(x)}dx \pm \int{g(x)}dx$
+
+### Tabla de integrales fundamentales
+
+* $\int{x^n}dx = \frac{x^{n+1}}{n+1} + C$
+* $\int{k}dx = k*x + C$
+* $\int{\frac{1}{x}}dx = ln|x| + C$
+* $\int{e^{x}}dx = e^{x} + C$
+* $\int{k^{x}}dx = \frac{k^{x}}{ln(k)} + C$
+* $\int{cos(x)}dx = sin(x) + C$
+* $\int{sin(x)}dx = -cos(x) + C$
+* $\int{sec²(x)}dx = tan(x) + C$
+* $\int{csc²(x)}dx = -cot(x) + C$
+* $\int{sec(x)tan(x)}dx = sec(x) + C$
+* $\int{csc(x)cot(x)}dx = -csc(x) + C$
+* $\int{\frac{1}{\sqrt{1-x²}}}dx = sin^{-1}(x) + C$
+* $\int{\frac{-1}{\sqrt{1-x²}}}dx = cos^{-1}(x) + C$
+* $\int{\frac{1}{1-x²}}dx = tan^{-1}(x) + C$
