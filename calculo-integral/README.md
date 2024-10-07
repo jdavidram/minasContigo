@@ -7,7 +7,7 @@
 3. El problema de la distancia
 4. La integral definida
 5. Propiedades de la integral definida
-6. Antiderivadas
+6. [Antiderivadas](#antiderivadas)
 7. Integral indefinida
 8. Movimiento rectilíneo
 9. **Teorema Fundamental del Calculo** - Cómo evaluar integrales definidas
@@ -93,3 +93,41 @@ Por definición:
 > * $\sum_{i=1}^n c = n*c$
 > * $\sum_{i=1}^n c*a_i = c\sum_{i=1}^n a_i$
 > * $\sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i$
+
+## Antiderivadas
+
+En sesiones anteriores, vimos cómo evaluar integrales definidas usando sumas de Riemann. Ahora, la idea es obtener un método más eficiente y menos tedioso para calcular $\int_a^b f(x)dx$. Para tal fin introducimos el concepto de antiderivada.
+
+> **Definición**
+>
+> Una función F se dice que es una *antiderivada* (o una primitiva) de una función $f$ sobre un intervalo $I$ si
+> $$
+> F'(x) = f(x)
+> $$
+> para todo $x \in I$
+
+**Ejemplo.** $F(x) = \frac{x^4}{4}$ Es una antiderivada de $f(x) = x^{3} en I = (-\inf, \inf)$. En efecto,
+
+$$
+F'(x) = \frac{1}{4}*4x^3 = f(x)
+$$
+
+para todo $x \in I$
+
+Notemos que $G(x) = \frac{x^4}{4} + 2024 es otra antiderivada de $f(x) = x^{3} en I$. En general, cualquier función de la forma
+
+$$
+H(x) = \frac{x^4}{4} + C \ , C \in \mathbb{R}
+$$
+
+es una antiderivada de $f(x) = x^3$ en $I$.
+
+> **Teorema**
+>
+> Si F es una antiderivada de $f$ sobre $I$, entonces la antiderivada más general de $f$ sobre $I$ es
+> $$
+> F(x) + C
+> $$
+> Donde $C \in \mathbb{R}$ es una constante arbitraria
+
+Necesitamos una notación adecuada para las antiderivadas que nos facilite el trabajo con ellas.
