@@ -87,9 +87,9 @@ Por definición:
 * Indica iniciar en i = m
 
 > **Propiedades**
->
+> 
 > Siendo *c* una constante
->
+> 
 > * $\sum_{i=1}^n c = n*c$
 > * $\sum_{i=1}^n c*a_i = c\sum_{i=1}^n a_i$
 > * $\sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i$
@@ -99,12 +99,8 @@ Por definición:
 En sesiones anteriores, vimos cómo evaluar integrales definidas usando sumas de Riemann. Ahora, la idea es obtener un método más eficiente y menos tedioso para calcular $\int_a^b f(x)dx$. Para tal fin introducimos el concepto de antiderivada.
 
 > **Definición**
->
-> Una función F se dice que es una *antiderivada* (o una primitiva) de una función $f$ sobre un intervalo $I$ si
-> $$
-> F'(x) = f(x)
-> $$
-> para todo $x \in I$
+> 
+> Una función F se dice que es una *antiderivada* (o una primitiva) de una función $f$ sobre un intervalo $I$ si $F'(x) = f(x)$ para todo $x \in I$
 
 **Ejemplo.** $F(x) = \frac{x^4}{4}$ Es una antiderivada de $f(x) = x^{3} en I = (-\inf, \inf)$. En efecto,
 
@@ -114,7 +110,7 @@ $$
 
 para todo $x \in I$
 
-Notemos que $G(x) = \frac{x^4}{4} + 2024 es otra antiderivada de $f(x) = x^{3} en I$. En general, cualquier función de la forma
+Notemos que $G(x) = \frac{x^4}{4} + 2024$ es otra antiderivada de $f(x) = x^{3}$ en $I$. En general, cualquier función de la forma
 
 $$
 H(x) = \frac{x^4}{4} + C \ , C \in \mathbb{R}
@@ -123,32 +119,32 @@ $$
 es una antiderivada de $f(x) = x^3$ en $I$.
 
 > **Teorema**
->
+> 
 > Si F es una antiderivada de $f$ sobre $I$, entonces la antiderivada más general de $f$ sobre $I$ es
-> $$
-> F(x) + C
-> $$
+> 
+> $F(x) + C$
+> 
 > Donde $C \in \mathbb{R}$ es una constante arbitraria
 
 Necesitamos una notación adecuada para las antiderivadas que nos facilite el trabajo con ellas.
 
 ## Integral Indefinida
- 
+
 $$
 \int{f(x)}dx = F(x) + C => F'(x) = f(x)
 $$
- 
+
 Observemos que una integral definida es un n«umero y que una integral indefinida es una familia de funciones.
- 
+
 > **Propiedades de la integral indefinida**
->
+> 
 > Donde $k \in \mathbb{R}$
->
+> 
 > * $\int{k*f(x)}dx = k*\int{f(x)}dx$
->
+> 
 > * $\int{f(x) \pm g(x)}dx = \int{f(x)}dx \pm \int{g(x)}dx$
 
-### Tabla de integrales fundamentales
+### Lista de integrales fundamentales
 
 * $\int{x^n}dx = \frac{x^{n+1}}{n+1} + C$
 * $\int{k}dx = k*x + C$
@@ -172,20 +168,21 @@ diferencial y el cálculo integral. Usando la relación inversa entre la integra
 método sistemático que nos permite calcular con gran facilidad áreas, distancias e integrales definidas, sin tener que evaluarlas como límites de sumas.
 
 > **Teorema de evaluación**
->
+> 
 > Sean $f$ una función continua en [a,b] y $F(x)$ una antiderivada de $f(x)$ en [a,b]. Entonces:
-> $$
-> \int_{a}^{b}{f(x)}dx = F(x)|_{a}^{b} = F(b) - F(a)
-> $$
+> 
+> $\int_{a}^{b}{f(x)}dx = F(x)|_{a}^{b} = F(b) - F(a)$
 
 ## La derivación y la integración como procesos inversos
 
 $$
 \int_{a}^{x}{f(t)}dt = F(x) - F(a)
 $$
+
 $$
 \frac{d}{dx}(F(x) - F(a)) = f(x)
 $$
+
 $$
 \frac{d}{dx}\int_{a}^{x}{f(t)}dt = f(x)
 $$
@@ -193,14 +190,13 @@ $$
 ## Aplicaciones del teorema de evaluación
 
 > **Teorema del cambio neto**
->
+> 
 > La integral de una razón de cambio es el cambio neto (o total)
-> $$
-> \int_{a}^{b}{Q'(x)}dx = Q(b) - Q(a)
-> $$
+> 
+> $\int_{a}^{b}{Q'(x)}dx = Q(b) - Q(a)$
 
 * Si $V(t)$ es el volumen de agua en un tanque $V'(t)$
- es la razón a la cual fluye (entra o sale) el agua en el instante $t$. Por tanto la variación del volumen entre el tiempo $t_1$ y $t_2$ es:
+  es la razón a la cual fluye (entra o sale) el agua en el instante $t$. Por tanto la variación del volumen entre el tiempo $t_1$ y $t_2$ es:
 
 $$
 \int_{t_1}^{t_2}{V'(t)}dt = V(t_2) - V(t_1)
