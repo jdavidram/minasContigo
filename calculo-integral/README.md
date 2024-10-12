@@ -68,9 +68,9 @@
 
 <hr />
 
-### Capitulo 1
+## Capitulo 1
 
-## Notación Sigma
+### Notación Sigma
 
 El **operador sumatoria** nos permite escribir la suma de varios numeros $a_m ,..., a_n (m \leq n)$ en la forma compacta
 
@@ -94,7 +94,7 @@ Por definición:
 > * $\sum_{i=1}^n c*a_i = c\sum_{i=1}^n a_i$
 > * $\sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i$
 
-## Antiderivadas
+### Antiderivadas
 
 En sesiones anteriores, vimos cómo evaluar integrales definidas usando sumas de Riemann. Ahora, la idea es obtener un método más eficiente y menos tedioso para calcular $\int_a^b f(x)dx$. Para tal fin introducimos el concepto de antiderivada.
 
@@ -128,7 +128,7 @@ es una antiderivada de $f(x) = x^3$ en $I$.
 
 Necesitamos una notación adecuada para las antiderivadas que nos facilite el trabajo con ellas.
 
-## Integral Indefinida
+### Integral Indefinida
 
 $$
 \int{f(x)}dx = F(x) + C => F'(x) = f(x)
@@ -144,7 +144,7 @@ Observemos que una integral definida es un n«umero y que una integral indefinid
 > 
 > * $\int{f(x) \pm g(x)}dx = \int{f(x)}dx \pm \int{g(x)}dx$
 
-### Lista de integrales fundamentales
+#### Lista de integrales fundamentales
 
 * $\int{x^n}dx = \frac{x^{n+1}}{n+1} + C$
 * $\int{k}dx = k*x + C$
@@ -161,7 +161,7 @@ Observemos que una integral definida es un n«umero y que una integral indefinid
 * $\int{\frac{-1}{\sqrt{1-x²}}}dx = cos^{-1}(x) + C$
 * $\int{\frac{1}{1-x²}}dx = tan^{-1}(x) + C$
 
-## Teorema Fundamental del Calculo - Cómo evaluar integrales definidas
+### Teorema Fundamental del Calculo - Cómo evaluar integrales definidas
 
 El Teorema Fundamental del Cálculo recibe de manera apropiada este nombre porque establece una conexión entre las 2 ramas del cálculo: el cálculo
 diferencial y el cálculo integral. Usando la relación inversa entre la integral y la derivada que afirma el teorema, Newton y Leibniz desarrollaron un
@@ -173,7 +173,7 @@ método sistemático que nos permite calcular con gran facilidad áreas, distanc
 > 
 > $\int_{a}^{b}{f(x)}dx = F(x)|_{a}^{b} = F(b) - F(a)$
 
-## La derivación y la integración como procesos inversos
+### La derivación y la integración como procesos inversos
 
 $$
 \int_{a}^{x}{f(t)}dt = F(x) - F(a)
@@ -187,7 +187,7 @@ $$
 \frac{d}{dx}\int_{a}^{x}{f(t)}dt = f(x)
 $$
 
-## Aplicaciones del teorema de evaluación
+### Aplicaciones del teorema de evaluación
 
 > **Teorema del cambio neto**
 > 
@@ -225,3 +225,63 @@ $$
 $$
 \int_{t_1}^{t_2}{|v(t)|}dt = DistanciaTotal
 $$
+
+### Técnica de integración por partes
+
+Cada regla de derivación tiene una correspondiente regla de integración. Por ejemplo, la regla de sustitución de la clase anterior corresponde a la regla de la cadena. A la regla del producto le corresponde la denominada **Regla de integración por partes**.
+
+> **Regla de integración por partes**
+> $$\int{f(x)*g'(x)}dx = f(x)*g(x) - \int{f'(x)*g(x)}dx$$
+
+En la práctica, la regla es más fácil de recordar y de aplicar si se escribe usando *diferenciales*:
+
+* $u = f(x) \wedge du = f'(x)dx$
+* $dv = g'(x)dx \wedge v = g(x)$
+
+Sustituyendo, se obtiene
+
+> **Fórmula de integración por partes**
+> $$\int{u}dv = u*v - \int{v}du$$
+
+Cuando se presentan varias opciones en la elección de $u$ y $dv$, hay que aplicar 2 criterios:
+
+1. $v$ debe ser fácil de calcular a partir de $dv$
+2. La integral $\int{v}du$ debe ser, en cierto sentido, más fácil que la integral original $\int{u}dv$
+
+<hr />
+
+El siguiente *ejemplo* ilustra esta idea.
+
+$$
+\int{x*\cos{x}}dx
+$$
+
+* $u = x \wedge dv = \cos(x)dx$
+
+* $du = dx \wedge v = \sin(x)$
+
+$$
+\int{x*\cos{x}}dx = x*\sin{x} - \int{\sin{x}}dx = x*\sin{x} + \cos{x} + C
+$$
+
+Si hubiéramos elegido $u = \cos{x} \wedge dv = x*dx$, entonces habríamos enfrentado una integral más difícil que la original:
+
+$$
+\int{x*\cos{x}}dx = \frac{x^2}{2}*\cos{x} + \frac{1}{2}*\int{x^2*\sin{x}}dx
+$$
+
+Al integrar por partes, se recomienda usar la regla de **LIATE**: una estrategia heurística que propone un orden de prioridad
+
+* **L**ogarítmica
+* **I**nversa trigonometrica
+* **A**lgebraica
+* **T**rigonométrica
+* **E**xponencial
+
+en la elección de $u$ y $dv$. Por ejemplo, al integrar $\int{x^2\arctan{x}}dx$, se elige $u = \arctan{x} \wedge dx = x^2dx$.
+
+<hr />
+
+> **Evaluando integrales definidas por partes**
+>
+> $$\int_{a}^{b}{f(x)*g'(x)}dx = f(x)*g(x)|_{a}^{b} - \int_{a}^{b}{g(x)*f'(x)}dx$$
