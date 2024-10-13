@@ -1,1 +1,0 @@
-# Calculo en Varias Variables
