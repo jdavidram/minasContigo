@@ -213,3 +213,41 @@ en la elección de $u$ y $dv$. Por ejemplo, al integrar $\int{x^2\arctan{x}}dx$,
 > **Evaluando integrales definidas por partes**
 >
 > $$\int_{a}^{b}{f(x)*g'(x)}dx = f(x)*g(x)|_{a}^{b} - \int_{a}^{b}{g(x)*f'(x)}dx$$
+
+# Integrales trigonométricas
+
+> **Estrategia para evaluar** $\int{\sin^{m}{x}*\cos^{n}{x}}dx$
+>
+> 1. Si la potencia de $\cos{x}$ es **impar**, escriba $n = 2*k + 1$, separe un factor $\cos{x}$ y use $\cos^{2}{x} = 1 - \sin^{2}{x}$:
+>
+> $$\int{\sin^{m}{x}*\cos^{2*k + 1}{x}}dx = \int{\sin^{m}{x}*(\cos^{2}{x})^{k}*\cos{x}}dx = \int{\sin^{m}{x}*(1 - \sin^{2}{x})^{k}*\cos{x}}dx$$
+>
+> $$u = \sin{x} \wedge du = \cos{x}$$
+>
+> 2. Si la potencia de $\sin{x}$ es **impar**, escriba $m = 2*k + 1$, separe un factor $\sin{x}$ y use $\sin^{2}{x} = 1 - \cos^{2}{x}$:
+>
+> $$\int{\sin^{2*k + 1}{x}*\cos^{n}{x}}dx = \int{(\sin^{2}{x})^{k}*\cos^{n}{x}*\sin{x}}dx = \int{(1 - \cos^{2}{x})^{k}*\cos^{n}{x}*\sin{x}}dx$$
+>
+> $$u = \cos{x} \wedge du = -\sin{x}$$
+>
+> 3. Si las potencias de ambos, $\sin{x}$ y $\cos{x}$, son **pares**, utilice las identidades del ángulo medio:
+>
+> $$ \cos^{2}{x} = \frac{1 + \cos{2x}}{2} \\ \sin^{2}{x} = \frac{1 - \cos{2x}}{2}$$
+>
+> También puede ser útil la identidad de ángulo doble: $\sin{x}*\cos{x} = \frac{1}{2}*\sin{2x}$
+
+> **Estrategia para evaluar** $\int{\tan^{m}{x}*\sec^{n}{x}}dx$
+>
+> 1. Si la potencia de $\sec{x}$ es **par**, escriba $n = 2*k$, separe un factor de $\sec^{2}{x}$ y use $\sec^{2}{x} = 1 + \tan^{2}{x}$:
+>
+> $$\int{\tan^{m}{x}*(\sec^{2}{x})^{k-1}*\sec^{2}{x}}dx = \int{\tan^{m}{x}*(1 + \tan^{2}{x})^{k-1}*\sec^{2}{x}}dx$$
+>
+> $$u = \tan{x} \\ du = \sec^{2}{x}dx$$
+>
+> 2. Si la potencia de $\tan{x}$ es **impar**, escriba $m = 2*k + 1$, separe un factor de $\sec{x}*\tan{x}$ y use $\tan^{2}{x} = \sec^{2}{x} -1$:
+>
+> $$\int{(\tan^{2}{x})^{k}*\tan{x}*\sec^{n-1}{x}*\sec{x}}dx = \int{(\sec^{2}{x} -1)^{k}*\sec^{n-1}{x}*\sec{x}*\tan{x}}dx$$
+>
+> $$u = \sec{x} \\ du = \sec{x}*\tan{x}dx$$
+>
+> 3. Para los otros casos, no hay guías claras: puede requerir identidades, integración por partes y un poco de ingenio.
