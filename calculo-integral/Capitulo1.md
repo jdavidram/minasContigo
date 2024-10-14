@@ -377,3 +377,17 @@ $$
 > Son integrales que no podemos expresar como funciones elementales. Para resolverlas requerimos otros métodos.
 
 En esta clase extendemos el concepto de integral definida al caso en que el intervalo de integración sea infinito, y también al caso en que $f$ tiene una discontinuidad infinita en $[a, b]$. En cada caso, la integral se denomina impropia.
+
+# Prueba de comparación para integrales impropias
+
+Algunas veces no es posible calcular el valor exacto de una integral impropia. Sin embargo, es posible determinar si converge o no, al compararla con otra integral impropia conocida ó más fácil de calcular:
+
+> **Teorema de comparación**
+>
+> Supongamos que $f$ y $g$ son continuas con $0 \leq g(x) \leq f(x)$, para todo $x \geq a$.
+>
+> * Si $\int_{a}^{\infty}{f(x)}dx$ converge, entonces $\int_{a}^{\infty}{g(x)}dx$ también converge.
+>
+> * Si $\int_{a}^{\infty}{g(x)}dx$ diverge, entonces $\int_{a}^{\infty}{f(x)}dx$ también diverge.
+
+**Nota:** Aunque no lo enunciamos, hay una prueba de comparación completamente análoga para integrales impropias de *tipo 2*.
