@@ -251,3 +251,129 @@ en la elección de $u$ y $dv$. Por ejemplo, al integrar $\int{x^2\arctan{x}}dx$,
 > $$u = \sec{x} \\ du = \sec{x}*\tan{x}dx$$
 >
 > 3. Para los otros casos, no hay guías claras: puede requerir identidades, integración por partes y un poco de ingenio.
+
+# Integración de funciones racionales mediante fracciones parciales
+
+Motivación. Si sumamos las fracciones $\frac{4}{x-1}$ y $\frac{-2}{x+2}$, se obtiene:
+
+$$
+\frac{4}{x-1} + \frac{-2}{x+2} = \frac{4*(x+2) - 2*(x-1)}{(x-1)*(x+2)} = \frac{2x + 10}{x^{2} + x -2}
+$$
+
+Luego,
+
+$$
+\int{\frac{2x+10}{x^2+x-2}}dx = \int{(\frac{4}{x-1} - \frac{2}{x+2})}dx = 4*\int{\frac{dx}{x-1}} - 2*\int{\frac{dx}{x+2}} = 4*ln|x-1| - 2*ln|x+2| + C
+$$
+
+La suma $\frac{4}{x-1} - \frac{2}{x+2}$ se denomina *descomposición en fracciones parciales* de la función racional $f(x) = \frac{2x+10}{x^2+x-2}$
+
+> **Nota**
+>
+> Este método se puede aplicar si $f(x) = \frac{P(x)}{Q(x)}$ es una *fracción propia* (el grado del numerador $P$ es *menor* que el grado del denominador $Q$). Si la fracción es impropia, se debe realizar el paso preliminar de dividir $P$ por $Q$.
+
+> **Método de fracciones parciales para evaluar** $\int{\frac{P(x)}{Q(x)}}dx$
+>
+> 1. Factorice $Q(x)$ tanto como sea posible en factoriales lineales y/o factores cuadráticos irreducibles.
+>
+> 2. Descomponga la fracción propia como una suma de *fracciones parciales* de la forma $\frac{A}{(ax+b)^{i}}$ o $\frac{Ax+B}{(ax^2+bx+c)^{j}}$.
+>
+> 3. Halle las constantes $A, B,...$ usando el hecho de que 2 polinomios son iguales si y sólo si sus coeficientes son iguales.
+>
+> 4. Integre de acuerdo a cada caso.
+
+**Caso 1: El denominador $Q(X)$ es producto de factores lineales distintos**.
+
+*Ejemplo*. Evalúe $\int{\frac{3x^2+7x-2}{x^3-x}}dx$.
+
+Factorizamos $Q(x) = x^3 -x = x*(x^2 -1) = x*(x-1)*(x+1)$. Por tanto,
+
+$$
+\frac{3x^2 +7x -2}{x^3 -x} = \frac{A}{x} + \frac{B}{x-1} + \frac{C}{x+1} \Rightarrow 3x^2 + 7x -2 = A*(x^2-1) + Bx*(x+1) + Cx*(x-1)
+$$
+
+Encontramos las constantes, sustituyendo las raíces de $Q(X)$ en la ecuación anterior:
+
+$$
+x=0 \Rightarrow -2 = A(-1) \Rightarrow A = 2 \\ x=1 \Rightarrow 8=B(2) \Rightarrow B = 4 \\ x=-1 \Rightarrow -6=C(2) \Rightarrow C = -3
+$$
+
+Luego,
+
+$$
+\int{\frac{3x^2 + 7x -2}{x^3 -x}}dx = \int{\frac{2dx}{x}} + \int{\frac{4dx}{x-1}} - \int{\frac{3dx}{x+1}}
+$$
+
+**Caso 2: $Q(X)$ es producto de factores lineales, algunos de los cuales se repiten**.
+
+ *Ejemplo*. Evalúe $\int{\frac{4x^2 + 2x +3}{(x-4)*(x+1)^2}}dx$.
+
+ Primero, notamos que $Q(x)$ ya está factorizado. Por tanto,
+
+$$
+\frac{4x^2 + 2x +3}{(x-4)*(x+1)^2} = \frac{A}{x-4} + \frac{B}{x+1} + \frac{C}{(x+1)^2} \Rightarrow 4x^2 + 2x +3 = A(x+1)^2 + B(x-4)(x+1) + C(x-4)
+$$
+
+De nuevo, hallamos las constantes, sustituyendo valores adecuados de $x$ en la ecuación anterior:
+
+$$
+x=4 \Rightarrow 75=A(5)^2 \Rightarrow A=3 \\ x=-1 \Rightarrow 5=C(-5) \Rightarrow C=-1 \\ x=0 \Rightarrow 3=3+B(-4)+4 \Rightarrow B=1
+$$
+
+Luego,
+
+$$
+\int{\frac{4x^2 + 2x +3}{(x-4)(x+1)^2}}dx = 3*\int{\frac{dx}{x-4}} + \int{\frac{dx}{x+1}} - \int{\frac{dx}{(x+1)^2}}
+$$
+
+> **Nota**
+>
+> * Un factor cuadrático $a^2 + bx +c$ se dice que es irreducible si $b^2 - 4ac < 0$ (es decir, su discriminante es negativo).
+>
+> * *Todo polinomio se factoriza como producto de factores lineales y cuadráticos irreducibles*.
+>
+> * Para los siguientes 2 casos es útil saber que
+>
+> $$\int{\frac{1}{x^2 + a^2}}dx = \frac{1}{a}*\arctan{\frac{x}{a}} + C$$
+
+**Caso 3: $Q(X)$ contiene factores cuadráticos irreducibles, de los cuales ninguo se repite**.
+
+*Ejemplo*. Evalúe $\int{\frac{x^3 -x +6}{x^3 + 4x}}dx$.
+
+Divimos la fracción, resultando:
+
+$$
+f(x) = 1 + \frac{-5x +6}{x*(x^2 +4)} = 1 + \frac{A}{x} + \frac{Bx +C}{x^2 +4}
+$$
+
+Igualando $\Rightarrow -5x +6 = A(x^2 +4) + Bx^2 + Cx \Rightarrow A=\frac{3}{2}, B=\frac{-3}{2}, C=-5$. Por tanto,
+
+$$
+\int{\frac{x^3 -x +6}{x^3 +4x}}dx = \int{1}dx + \frac{3}{2}*\int{\frac{dx}{x}} - \frac{3}{2}*\int{\frac{x}{x^2 +4}}dx - 5*\int{\frac{1}{x^2 +4}}dx
+$$
+
+**Caso 4: $Q(X)$ contiene factores cuadráticos irreducibles repetidos**.
+
+*Ejemplo*. Evalúe $\int{\frac{-x^3 +2x^2 -x +1}{x*(x^2 +1)^2}}dx$.
+
+En este caso,
+
+$$
+\frac{-x^3 +2x^2 -x +1}{x*(x^2 +1)^2} = \frac{A}{x} + \frac{Bx +C}{x^2 +1} + \frac{Dx +E}{(x^2 +1)^2}
+$$
+
+Procediendo como en los ejemplos anteriores, se llega a que $A=1$, $B=-1$, $C=-1$, $D=1$ y $E=0$.
+
+$$
+\int{\frac{-x^3 +2x^2 -x +1}{x*(x^2 +1)^2}}dx = \int{\frac{dx}{x}} - \int{\frac{x}{x^2 +1}}dx - \int{\frac{1}{x^2 +1}}dx + \int{\frac{x}{(x^2 +1)^2}}dx
+$$
+
+> **Nota**
+>
+> Existen muchas funciones a las que no les podemos hallar una antiderivada con los métodos vistos. Por ejemplo,
+>
+> $\int{\frac{e^x}{x}}dx$; $\int{\frac{\sin{x}}{x}}dx$; $\int{\frac{1}{ln(x)}}dx$; $\int{\cos{e^x}}dx$; $\int{\sin{x^2}}dx$; $\int{\sqrt{x^3 +1}}dx$
+>
+> Son integrales que no podemos expresar como funciones elementales. Para resolverlas requerimos otros métodos.
+
+En esta clase extendemos el concepto de integral definida al caso en que el intervalo de integración sea infinito, y también al caso en que $f$ tiene una discontinuidad infinita en $[a, b]$. En cada caso, la integral se denomina impropia.
